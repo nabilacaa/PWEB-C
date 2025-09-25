@@ -126,7 +126,7 @@ body {
   top: -20px;
   display: flex;
   align-items: center;
-  background-image: url("/quiz1/image/place.gif");
+  background-image: url("/image/place.gif");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
