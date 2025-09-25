@@ -1,0 +1,310 @@
+:root {
+  --bg: #f9f5f0;
+  --primary: #344f1f;
+  --accent: #f4991a;
+}
+
+* {
+  /* font-family: "Poppins", sans-serif; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--bg);
+}
+
+/* NAVBAR NO EDIT */
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 1rem 7%;
+  font-family: "kunkun", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+/* overlay transparan/fade */
+.navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(1, 1, 1, 0.9),
+    rgba(52, 79, 31, 0)
+  );
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* teks navbar tetap di atas overlay */
+.navbar * {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar.scrolled {
+  background-color: rgba(52, 79, 31, 1);
+}
+
+.navbar .navbar-title a {
+  color: var(--bg);
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-title a:hover {
+  color: var(--accent);
+}
+
+.navbar .navbar-title a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--accent);
+  transform: scaleX(0);
+  transition: 0.1s linear;
+}
+
+.navbar .navbar-title a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: var(--bg);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--accent);
+}
+
+#ham-menu {
+  display: none;
+}
+/* NAVBAR NO EDIT */
+
+.background {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  background-image: url("image/download.gif");
+  background-repeat: no-repeat;
+  background-size: 110% auto;
+  background-position: right 0;
+  position: relative;
+}
+
+/* Hero */
+.hero .content {
+  padding: 1.4rem 5%;
+  max-width: 50rem;
+  position: absolute;
+  right: 0;
+  top: 40%;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  font-family: "kunkun", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--accent);
+  text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.5);
+  line-height: 0.9;
+}
+
+.hero .content p {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: var(--bg);
+  text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.5);
+}
+
+/* Text */
+.hero .text {
+  margin: 2rem auto;
+  align-items: center;
+  top: 900px;
+  padding: 1.4rem 5%;
+  text-align: center;
+  max-width: 80rem;
+}
+
+.hero .text h2 {
+  color: var(--accent);
+  font-family: "kunkun", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3em;
+  max-width: 30rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero .text p {
+  max-width: 80rem;
+  margin: 2rem;
+  color: var(--primary);
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  color: white;
+}
+
+footer .credit {
+  padding: 1rem 0;
+}
+
+footer .credit p {
+  color: white;
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: small;
+}
+
+footer .credit p a {
+  color: white;
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: small;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #ham-menu {
+    display: inline-block;
+  }
+
+  .navbar {
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+
+  .navbar.scrolled {
+    background-color: rgba(52, 79, 31, 1);
+  }
+
+  .navbar .navbar-title {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background-color: var(--primary);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  .navbar .navbar-title.active {
+    right: 0;
+  }
+
+  .navbar .navbar-title a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .background {
+    height: 470px;
+  }
+
+  .hero .content {
+    top: 20%;
+    font-size: 80%;
+    max-width: 40rem;
+  }
+}
+
+/* HP */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .background {
+    height: 250px;
+  }
+
+  .hero .content {
+    top: 10%;
+    font-size: 50%;
+    max-width: 30rem;
+  }
+
+  .hero .content p {
+    font-size: 150%;
+  }
+}
