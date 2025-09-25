@@ -3,7 +3,7 @@ const navbartitle = document.querySelector(".navbar-title");
 const hamMenu = document.querySelector("#ham-menu");
 
 hamMenu.addEventListener("click", (e) => {
-  e.preventDefault(); // cegah <a href="#"> balik ke atas
+  e.preventDefault(); 
   navbartitle.classList.toggle("active");
 });
 
