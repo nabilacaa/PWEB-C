@@ -126,7 +126,7 @@ body {
   top: -20px;
   display: flex;
   align-items: center;
-  background-image: url("../image/food.gif");
+  background-image: url("/quiz1/image/food.gif");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
